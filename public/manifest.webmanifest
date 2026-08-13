@@ -1,0 +1,19 @@
+{
+  "name": "Habit.log",
+  "short_name": "Habit.log",
+  "description": "A fast, private habit journal with offline-first sync.",
+  "id": "/",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0f0c",
+  "theme_color": "#0d0f0c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
