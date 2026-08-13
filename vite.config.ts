@@ -34,6 +34,15 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async () => {
+  // Vercel needs Nitro's Build Output API bundle. Keep the existing
+  // Cloudflare/Sites adapter for local development and Sites deployments.
+  if (process.env.VERCEL) {
+    const { nitro } = await import("nitro/vite");
+    return {
+      plugins: [vinext(), nitro()],
+    };
+  }
+
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= "false";
